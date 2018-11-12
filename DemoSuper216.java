@@ -33,18 +33,34 @@ class Box {
 class BoxWeight extends Box {
 	double weight;
 
+	BoxWeight(BoxWeight ob) {
+		super(ob);
+		weight = ob.weight;
+	}
+
 	BoxWeight(double w, double h, double d, double m) {
-		width = w;
-		height = h;
-		depth = d;
+		super(w, h, d);
+		weight = m;
+	}
+
+	BoxWeight() {
+		super();
+		weight = -1;
+	}
+
+	BoxWeight(double len, double m) {
+		super(len);
 		weight = m;
 	}
 }
 
-class DemoBoxWeight212 {
+class DemoSuper216 {
 	public static void main(String args[]) {
 		BoxWeight mybox1 = new BoxWeight(10, 20, 15, 34.3);
 		BoxWeight mybox2 = new BoxWeight(2, 3, 4, 0.076);
+		BoxWeight mybox3 = new BoxWeight();
+		BoxWeight mycube = new BoxWeight(3, 2);
+		BoxWeight myclone = new BoxWeight(mybox1);
 		double vol;
 
 		vol = mybox1.volume();
@@ -55,6 +71,21 @@ class DemoBoxWeight212 {
 		vol = mybox2.volume();
 		System.out.println("Volume of mybox2 equal " + vol);
 		System.out.println("Weight of mybox2 equal " + mybox2.weight);
+		System.out.println();
+
+		vol = mybox3.volume();
+		System.out.println("Volume of mybox3 equal " + vol);
+		System.out.println("Weight of mybox3 equal " + mybox3.weight);
+		System.out.println();
+
+		vol = myclone.volume();
+		System.out.println("Volume of myclone equal " + vol);
+		System.out.println("Weight of myclone equal " + myclone.weight);
+		System.out.println();
+
+		vol = mycube.volume();
+		System.out.println("Volume of mycube equal " + vol);
+		System.out.println("Weight of mycube equal " + mycube.weight);
 		System.out.println();
 	}
 }

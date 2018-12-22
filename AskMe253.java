@@ -52,13 +52,12 @@ class AskMe253 implements SharedConstants {
         }
     }
 
-}
+    public static void main(String args[]) {
+        Question q = new Question();
+        answer(q.ask());
+        answer(q.ask());
+        answer(q.ask());
+        answer(q.ask());
 
-public static void main(String args) {
-    Question q = new Question();
-        answer(q.ask());
-        answer(q.ask());
-        answer(q.ask());
-        answer(q.ask());
+    }
 }
-

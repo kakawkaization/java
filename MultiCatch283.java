@@ -4,12 +4,12 @@ class MultiCatch283 {
         int vals[] = { 1, 2, 3};
 
         try {
-            int result = a / b;
+           // int result = a / b;
 
-            // vals[10] = 19;
+             vals[10] = 19;
         } catch (ArithmeticException | ArrayIndexOutOfBoundsException e) {
             System.out.println("Exception intercepted: " + e);
         }
-        System.out.println("After ");
+        System.out.println("After repeated interception.");
     }
 }
